@@ -1,0 +1,11 @@
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - echo "Running build script"
+    - docker build -t my-image .
+
+  after_script:
+    - echo "Build completed"

@@ -1,0 +1,15 @@
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - mkdir -p test_results
+    - echo "Running tests..."
+    - pytest tests/
+
+  artifacts:
+    paths:
+      - test_results/
+  after_script:
+    - echo "Testing completed"
